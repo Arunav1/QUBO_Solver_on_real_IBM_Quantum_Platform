@@ -1,0 +1,28 @@
+
+# ==========================================
+# VeriQAOA - Complete Backend Requirements
+# ==========================================
+
+# 1. API Backend
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.34,<1.0
+pydantic>=2.10,<3.0
+python-dotenv>=1.0,<2.0
+
+# 2. LLM Integration
+openai>=1.60,<3.0
+
+# 3. Mathematical Modeling and Verification
+numpy>=1.26,<3.0
+sympy>=1.13,<2.0
+scipy>=1.13,<2.0
+
+# 4. Quantum Computing
+qiskit>=1.2,<3.0
+qiskit-aer>=0.15,<1.0
+qiskit-optimization>=0.7,<1.0
+qiskit-ibm-runtime>=0.30,<1.0
+
+# 5. Testing
+pytest>=8.3,<9.0
+httpx>=0.27,<1.0

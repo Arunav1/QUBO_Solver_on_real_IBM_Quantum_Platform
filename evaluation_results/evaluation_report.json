@@ -1,0 +1,1211 @@
+{
+  "project": "VeriQAOA",
+  "benchmark_count": 3,
+  "benchmark_results": [
+    {
+      "name": "select_one",
+      "passed": true,
+      "checks": {
+        "qubo_equivalent": true,
+        "exact_solution_exists": true
+      },
+      "equivalence": {
+        "equivalent": true,
+        "assignments_checked": 4,
+        "max_absolute_error": 0.0,
+        "tolerance": 1e-08,
+        "penalty": 10.0,
+        "mismatches": [],
+        "mismatches_truncated": false
+      },
+      "qubo": {
+        "variables": [
+          "x_A",
+          "x_B"
+        ],
+        "constant": 10.0,
+        "terms": [
+          {
+            "var_i": "x_A",
+            "var_j": "x_A",
+            "coefficient": -7.0
+          },
+          {
+            "var_i": "x_B",
+            "var_j": "x_B",
+            "coefficient": -8.0
+          },
+          {
+            "var_i": "x_A",
+            "var_j": "x_B",
+            "coefficient": 20.0
+          }
+        ]
+      },
+      "exact_solution": {
+        "assignment": {
+          "x_A": 0,
+          "x_B": 1
+        },
+        "energy": 2.0
+      },
+      "runtime_seconds": 0.0007
+    },
+    {
+      "name": "maximize_value",
+      "passed": true,
+      "checks": {
+        "qubo_equivalent": true,
+        "exact_solution_exists": true
+      },
+      "equivalence": {
+        "equivalent": true,
+        "assignments_checked": 8,
+        "max_absolute_error": 0.0,
+        "tolerance": 1e-08,
+        "penalty": 10.0,
+        "mismatches": [],
+        "mismatches_truncated": false
+      },
+      "qubo": {
+        "variables": [
+          "x_A",
+          "x_B",
+          "x_C"
+        ],
+        "constant": 10.0,
+        "terms": [
+          {
+            "var_i": "x_A",
+            "var_j": "x_A",
+            "coefficient": -15.0
+          },
+          {
+            "var_i": "x_B",
+            "var_j": "x_B",
+            "coefficient": -18.0
+          },
+          {
+            "var_i": "x_C",
+            "var_j": "x_C",
+            "coefficient": -14.0
+          },
+          {
+            "var_i": "x_A",
+            "var_j": "x_B",
+            "coefficient": 20.0
+          },
+          {
+            "var_i": "x_A",
+            "var_j": "x_C",
+            "coefficient": 20.0
+          },
+          {
+            "var_i": "x_B",
+            "var_j": "x_C",
+            "coefficient": 20.0
+          }
+        ]
+      },
+      "exact_solution": {
+        "assignment": {
+          "x_A": 0,
+          "x_B": 1,
+          "x_C": 0
+        },
+        "energy": -8.0
+      },
+      "runtime_seconds": 0.0001
+    },
+    {
+      "name": "two_selected",
+      "passed": true,
+      "checks": {
+        "qubo_equivalent": true,
+        "exact_solution_exists": true
+      },
+      "equivalence": {
+        "equivalent": true,
+        "assignments_checked": 8,
+        "max_absolute_error": 0.0,
+        "tolerance": 1e-08,
+        "penalty": 10.0,
+        "mismatches": [],
+        "mismatches_truncated": false
+      },
+      "qubo": {
+        "variables": [
+          "x_A",
+          "x_B",
+          "x_C"
+        ],
+        "constant": 40.0,
+        "terms": [
+          {
+            "var_i": "x_A",
+            "var_j": "x_A",
+            "coefficient": -26.0
+          },
+          {
+            "var_i": "x_B",
+            "var_j": "x_B",
+            "coefficient": -29.0
+          },
+          {
+            "var_i": "x_C",
+            "var_j": "x_C",
+            "coefficient": -27.0
+          },
+          {
+            "var_i": "x_A",
+            "var_j": "x_B",
+            "coefficient": 20.0
+          },
+          {
+            "var_i": "x_A",
+            "var_j": "x_C",
+            "coefficient": 20.0
+          },
+          {
+            "var_i": "x_B",
+            "var_j": "x_C",
+            "coefficient": 20.0
+          }
+        ]
+      },
+      "exact_solution": {
+        "assignment": {
+          "x_A": 0,
+          "x_B": 1,
+          "x_C": 1
+        },
+        "energy": 4.0
+      },
+      "runtime_seconds": 0.0001
+    }
+  ],
+  "corruption_results": [
+    {
+      "name": "select_one",
+      "corruption_detected": true,
+      "repair_succeeded": true,
+      "passed": true,
+      "before": {
+        "equivalent": false,
+        "assignments_checked": 4,
+        "max_absolute_error": 7.0,
+        "tolerance": 1e-08,
+        "penalty": 10.0,
+        "mismatches": [
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0
+            },
+            "expected_energy": 3.0,
+            "compiled_energy": 10.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1
+            },
+            "expected_energy": 15.0,
+            "compiled_energy": 22.0,
+            "absolute_error": 7.0
+          }
+        ],
+        "mismatches_truncated": false
+      },
+      "repair": {
+        "repair_status": "repaired",
+        "counterexample_count": 2,
+        "counterexamples": [
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0
+            },
+            "expected_energy": 3.0,
+            "compiled_energy": 10.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1
+            },
+            "expected_energy": 15.0,
+            "compiled_energy": 22.0,
+            "absolute_error": 7.0
+          }
+        ],
+        "original_verification": {
+          "equivalent": false,
+          "assignments_checked": 4,
+          "max_absolute_error": 7.0,
+          "tolerance": 1e-08,
+          "penalty": 10.0,
+          "mismatches": [
+            {
+              "assignment": {
+                "x_A": 1,
+                "x_B": 0
+              },
+              "expected_energy": 3.0,
+              "compiled_energy": 10.0,
+              "absolute_error": 7.0
+            },
+            {
+              "assignment": {
+                "x_A": 1,
+                "x_B": 1
+              },
+              "expected_energy": 15.0,
+              "compiled_energy": 22.0,
+              "absolute_error": 7.0
+            }
+          ],
+          "mismatches_truncated": false
+        },
+        "repaired_qubo": {
+          "variables": [
+            "x_A",
+            "x_B"
+          ],
+          "constant": 10.0,
+          "terms": [
+            {
+              "var_i": "x_A",
+              "var_j": "x_A",
+              "coefficient": -7.0
+            },
+            {
+              "var_i": "x_B",
+              "var_j": "x_B",
+              "coefficient": -8.0
+            },
+            {
+              "var_i": "x_A",
+              "var_j": "x_B",
+              "coefficient": 20.0
+            }
+          ]
+        },
+        "final_verification": {
+          "equivalent": true,
+          "assignments_checked": 4,
+          "max_absolute_error": 0.0,
+          "tolerance": 1e-08,
+          "penalty": 10.0,
+          "mismatches": [],
+          "mismatches_truncated": false
+        }
+      },
+      "after": {
+        "equivalent": true,
+        "assignments_checked": 4,
+        "max_absolute_error": 0.0,
+        "tolerance": 1e-08,
+        "penalty": 10.0,
+        "mismatches": [],
+        "mismatches_truncated": false
+      }
+    },
+    {
+      "name": "maximize_value",
+      "corruption_detected": true,
+      "repair_succeeded": true,
+      "passed": true,
+      "before": {
+        "equivalent": false,
+        "assignments_checked": 8,
+        "max_absolute_error": 7.0,
+        "tolerance": 1e-08,
+        "penalty": 10.0,
+        "mismatches": [
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0,
+              "x_C": 0
+            },
+            "expected_energy": -5.0,
+            "compiled_energy": 2.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0,
+              "x_C": 1
+            },
+            "expected_energy": 1.0,
+            "compiled_energy": 8.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1,
+              "x_C": 0
+            },
+            "expected_energy": -3.0,
+            "compiled_energy": 4.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1,
+              "x_C": 1
+            },
+            "expected_energy": 23.0,
+            "compiled_energy": 30.0,
+            "absolute_error": 7.0
+          }
+        ],
+        "mismatches_truncated": false
+      },
+      "repair": {
+        "repair_status": "repaired",
+        "counterexample_count": 4,
+        "counterexamples": [
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0,
+              "x_C": 0
+            },
+            "expected_energy": -5.0,
+            "compiled_energy": 2.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0,
+              "x_C": 1
+            },
+            "expected_energy": 1.0,
+            "compiled_energy": 8.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1,
+              "x_C": 0
+            },
+            "expected_energy": -3.0,
+            "compiled_energy": 4.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1,
+              "x_C": 1
+            },
+            "expected_energy": 23.0,
+            "compiled_energy": 30.0,
+            "absolute_error": 7.0
+          }
+        ],
+        "original_verification": {
+          "equivalent": false,
+          "assignments_checked": 8,
+          "max_absolute_error": 7.0,
+          "tolerance": 1e-08,
+          "penalty": 10.0,
+          "mismatches": [
+            {
+              "assignment": {
+                "x_A": 1,
+                "x_B": 0,
+                "x_C": 0
+              },
+              "expected_energy": -5.0,
+              "compiled_energy": 2.0,
+              "absolute_error": 7.0
+            },
+            {
+              "assignment": {
+                "x_A": 1,
+                "x_B": 0,
+                "x_C": 1
+              },
+              "expected_energy": 1.0,
+              "compiled_energy": 8.0,
+              "absolute_error": 7.0
+            },
+            {
+              "assignment": {
+                "x_A": 1,
+                "x_B": 1,
+                "x_C": 0
+              },
+              "expected_energy": -3.0,
+              "compiled_energy": 4.0,
+              "absolute_error": 7.0
+            },
+            {
+              "assignment": {
+                "x_A": 1,
+                "x_B": 1,
+                "x_C": 1
+              },
+              "expected_energy": 23.0,
+              "compiled_energy": 30.0,
+              "absolute_error": 7.0
+            }
+          ],
+          "mismatches_truncated": false
+        },
+        "repaired_qubo": {
+          "variables": [
+            "x_A",
+            "x_B",
+            "x_C"
+          ],
+          "constant": 10.0,
+          "terms": [
+            {
+              "var_i": "x_A",
+              "var_j": "x_A",
+              "coefficient": -15.0
+            },
+            {
+              "var_i": "x_B",
+              "var_j": "x_B",
+              "coefficient": -18.0
+            },
+            {
+              "var_i": "x_C",
+              "var_j": "x_C",
+              "coefficient": -14.0
+            },
+            {
+              "var_i": "x_A",
+              "var_j": "x_B",
+              "coefficient": 20.0
+            },
+            {
+              "var_i": "x_A",
+              "var_j": "x_C",
+              "coefficient": 20.0
+            },
+            {
+              "var_i": "x_B",
+              "var_j": "x_C",
+              "coefficient": 20.0
+            }
+          ]
+        },
+        "final_verification": {
+          "equivalent": true,
+          "assignments_checked": 8,
+          "max_absolute_error": 0.0,
+          "tolerance": 1e-08,
+          "penalty": 10.0,
+          "mismatches": [],
+          "mismatches_truncated": false
+        }
+      },
+      "after": {
+        "equivalent": true,
+        "assignments_checked": 8,
+        "max_absolute_error": 0.0,
+        "tolerance": 1e-08,
+        "penalty": 10.0,
+        "mismatches": [],
+        "mismatches_truncated": false
+      }
+    },
+    {
+      "name": "two_selected",
+      "corruption_detected": true,
+      "repair_succeeded": true,
+      "passed": true,
+      "before": {
+        "equivalent": false,
+        "assignments_checked": 8,
+        "max_absolute_error": 7.0,
+        "tolerance": 1e-08,
+        "penalty": 10.0,
+        "mismatches": [
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0,
+              "x_C": 0
+            },
+            "expected_energy": 14.0,
+            "compiled_energy": 21.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0,
+              "x_C": 1
+            },
+            "expected_energy": 7.0,
+            "compiled_energy": 14.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1,
+              "x_C": 0
+            },
+            "expected_energy": 5.0,
+            "compiled_energy": 12.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1,
+              "x_C": 1
+            },
+            "expected_energy": 18.0,
+            "compiled_energy": 25.0,
+            "absolute_error": 7.0
+          }
+        ],
+        "mismatches_truncated": false
+      },
+      "repair": {
+        "repair_status": "repaired",
+        "counterexample_count": 4,
+        "counterexamples": [
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0,
+              "x_C": 0
+            },
+            "expected_energy": 14.0,
+            "compiled_energy": 21.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0,
+              "x_C": 1
+            },
+            "expected_energy": 7.0,
+            "compiled_energy": 14.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1,
+              "x_C": 0
+            },
+            "expected_energy": 5.0,
+            "compiled_energy": 12.0,
+            "absolute_error": 7.0
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1,
+              "x_C": 1
+            },
+            "expected_energy": 18.0,
+            "compiled_energy": 25.0,
+            "absolute_error": 7.0
+          }
+        ],
+        "original_verification": {
+          "equivalent": false,
+          "assignments_checked": 8,
+          "max_absolute_error": 7.0,
+          "tolerance": 1e-08,
+          "penalty": 10.0,
+          "mismatches": [
+            {
+              "assignment": {
+                "x_A": 1,
+                "x_B": 0,
+                "x_C": 0
+              },
+              "expected_energy": 14.0,
+              "compiled_energy": 21.0,
+              "absolute_error": 7.0
+            },
+            {
+              "assignment": {
+                "x_A": 1,
+                "x_B": 0,
+                "x_C": 1
+              },
+              "expected_energy": 7.0,
+              "compiled_energy": 14.0,
+              "absolute_error": 7.0
+            },
+            {
+              "assignment": {
+                "x_A": 1,
+                "x_B": 1,
+                "x_C": 0
+              },
+              "expected_energy": 5.0,
+              "compiled_energy": 12.0,
+              "absolute_error": 7.0
+            },
+            {
+              "assignment": {
+                "x_A": 1,
+                "x_B": 1,
+                "x_C": 1
+              },
+              "expected_energy": 18.0,
+              "compiled_energy": 25.0,
+              "absolute_error": 7.0
+            }
+          ],
+          "mismatches_truncated": false
+        },
+        "repaired_qubo": {
+          "variables": [
+            "x_A",
+            "x_B",
+            "x_C"
+          ],
+          "constant": 40.0,
+          "terms": [
+            {
+              "var_i": "x_A",
+              "var_j": "x_A",
+              "coefficient": -26.0
+            },
+            {
+              "var_i": "x_B",
+              "var_j": "x_B",
+              "coefficient": -29.0
+            },
+            {
+              "var_i": "x_C",
+              "var_j": "x_C",
+              "coefficient": -27.0
+            },
+            {
+              "var_i": "x_A",
+              "var_j": "x_B",
+              "coefficient": 20.0
+            },
+            {
+              "var_i": "x_A",
+              "var_j": "x_C",
+              "coefficient": 20.0
+            },
+            {
+              "var_i": "x_B",
+              "var_j": "x_C",
+              "coefficient": 20.0
+            }
+          ]
+        },
+        "final_verification": {
+          "equivalent": true,
+          "assignments_checked": 8,
+          "max_absolute_error": 0.0,
+          "tolerance": 1e-08,
+          "penalty": 10.0,
+          "mismatches": [],
+          "mismatches_truncated": false
+        }
+      },
+      "after": {
+        "equivalent": true,
+        "assignments_checked": 8,
+        "max_absolute_error": 0.0,
+        "tolerance": 1e-08,
+        "penalty": 10.0,
+        "mismatches": [],
+        "mismatches_truncated": false
+      }
+    }
+  ],
+  "qaoa_results": [
+    {
+      "name": "select_one",
+      "qubo_equivalent": true,
+      "qaoa": {
+        "solver": "QAOA",
+        "backend": "Qiskit Aer simulator",
+        "variables": [
+          "x_A",
+          "x_B"
+        ],
+        "layers": 1,
+        "shots": 2048,
+        "optimizer": {
+          "method": "COBYLA",
+          "success": true,
+          "message": "Return from COBYLA because the trust region radius reaches its lower bound.",
+          "iterations": 32
+        },
+        "expected_qubo_energy": 3.07275675872558,
+        "best_sample": {
+          "assignment": {
+            "x_A": 0,
+            "x_B": 1
+          },
+          "energy": 2.0,
+          "count": 617,
+          "probability": 0.30126953125
+        },
+        "samples": [
+          {
+            "assignment": {
+              "x_A": 0,
+              "x_B": 1
+            },
+            "energy": 2.0,
+            "count": 617,
+            "probability": 0.30126953125
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0
+            },
+            "energy": 3.0,
+            "count": 1340,
+            "probability": 0.654296875
+          },
+          {
+            "assignment": {
+              "x_A": 0,
+              "x_B": 0
+            },
+            "energy": 10.0,
+            "count": 78,
+            "probability": 0.0380859375
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1
+            },
+            "energy": 15.0,
+            "count": 13,
+            "probability": 0.00634765625
+          }
+        ],
+        "ising": {
+          "offset": 7.5,
+          "linear_coefficients": [
+            -1.5,
+            -1.0
+          ],
+          "couplings": [
+            {
+              "var_i": "x_A",
+              "var_j": "x_B",
+              "coefficient": 5.0
+            }
+          ]
+        }
+      },
+      "solution_verification": {
+        "verified": true,
+        "feasible": true,
+        "optimal": true,
+        "assignment": {
+          "x_A": 0,
+          "x_B": 1
+        },
+        "original_objective": 2.0,
+        "qubo_energy": 2.0,
+        "constraint_check": {
+          "feasible": true,
+          "constraints": {
+            "select_exactly_one": {
+              "lhs": 1.0,
+              "rhs": 1.0,
+              "satisfied": true
+            }
+          }
+        },
+        "exact_reference": {
+          "feasible_solution_exists": true,
+          "optimal_assignment": {
+            "x_A": 0,
+            "x_B": 1
+          },
+          "optimal_objective": 2.0,
+          "feasible_assignments_checked": 2
+        }
+      },
+      "passed": true,
+      "runtime_seconds": 0.452
+    },
+    {
+      "name": "maximize_value",
+      "qubo_equivalent": true,
+      "qaoa": {
+        "solver": "QAOA",
+        "backend": "Qiskit Aer simulator",
+        "variables": [
+          "x_A",
+          "x_B",
+          "x_C"
+        ],
+        "layers": 1,
+        "shots": 2048,
+        "optimizer": {
+          "method": "COBYLA",
+          "success": false,
+          "message": "Return from COBYLA because the objective function has been evaluated MAXFUN times.",
+          "iterations": 100
+        },
+        "expected_qubo_energy": -1.8887695013944557,
+        "best_sample": {
+          "assignment": {
+            "x_A": 0,
+            "x_B": 1,
+            "x_C": 0
+          },
+          "energy": -8.0,
+          "count": 81,
+          "probability": 0.03955078125
+        },
+        "samples": [
+          {
+            "assignment": {
+              "x_A": 0,
+              "x_B": 1,
+              "x_C": 0
+            },
+            "energy": -8.0,
+            "count": 81,
+            "probability": 0.03955078125
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0,
+              "x_C": 0
+            },
+            "energy": -5.0,
+            "count": 252,
+            "probability": 0.123046875
+          },
+          {
+            "assignment": {
+              "x_A": 0,
+              "x_B": 0,
+              "x_C": 1
+            },
+            "energy": -4.0,
+            "count": 851,
+            "probability": 0.41552734375
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1,
+              "x_C": 0
+            },
+            "energy": -3.0,
+            "count": 114,
+            "probability": 0.0556640625
+          },
+          {
+            "assignment": {
+              "x_A": 0,
+              "x_B": 1,
+              "x_C": 1
+            },
+            "energy": -2.0,
+            "count": 207,
+            "probability": 0.10107421875
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0,
+              "x_C": 1
+            },
+            "energy": 1.0,
+            "count": 437,
+            "probability": 0.21337890625
+          },
+          {
+            "assignment": {
+              "x_A": 0,
+              "x_B": 0,
+              "x_C": 0
+            },
+            "energy": 10.0,
+            "count": 75,
+            "probability": 0.03662109375
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1,
+              "x_C": 1
+            },
+            "energy": 23.0,
+            "count": 31,
+            "probability": 0.01513671875
+          }
+        ],
+        "ising": {
+          "offset": 1.5,
+          "linear_coefficients": [
+            -2.5,
+            -1.0,
+            -3.0
+          ],
+          "couplings": [
+            {
+              "var_i": "x_A",
+              "var_j": "x_B",
+              "coefficient": 5.0
+            },
+            {
+              "var_i": "x_A",
+              "var_j": "x_C",
+              "coefficient": 5.0
+            },
+            {
+              "var_i": "x_B",
+              "var_j": "x_C",
+              "coefficient": 5.0
+            }
+          ]
+        }
+      },
+      "solution_verification": {
+        "verified": true,
+        "feasible": true,
+        "optimal": true,
+        "assignment": {
+          "x_A": 0,
+          "x_B": 1,
+          "x_C": 0
+        },
+        "original_objective": 8.0,
+        "qubo_energy": -8.0,
+        "constraint_check": {
+          "feasible": true,
+          "constraints": {
+            "choose_one": {
+              "lhs": 1.0,
+              "rhs": 1.0,
+              "satisfied": true
+            }
+          }
+        },
+        "exact_reference": {
+          "feasible_solution_exists": true,
+          "optimal_assignment": {
+            "x_A": 0,
+            "x_B": 1,
+            "x_C": 0
+          },
+          "optimal_objective": 8.0,
+          "feasible_assignments_checked": 3
+        }
+      },
+      "passed": true,
+      "runtime_seconds": 0.1186
+    },
+    {
+      "name": "two_selected",
+      "qubo_equivalent": true,
+      "qaoa": {
+        "solver": "QAOA",
+        "backend": "Qiskit Aer simulator",
+        "variables": [
+          "x_A",
+          "x_B",
+          "x_C"
+        ],
+        "layers": 1,
+        "shots": 2048,
+        "optimizer": {
+          "method": "COBYLA",
+          "success": false,
+          "message": "Return from COBYLA because the objective function has been evaluated MAXFUN times.",
+          "iterations": 100
+        },
+        "expected_qubo_energy": 11.772883746199765,
+        "best_sample": {
+          "assignment": {
+            "x_A": 0,
+            "x_B": 1,
+            "x_C": 1
+          },
+          "energy": 4.0,
+          "count": 345,
+          "probability": 0.16845703125
+        },
+        "samples": [
+          {
+            "assignment": {
+              "x_A": 0,
+              "x_B": 1,
+              "x_C": 1
+            },
+            "energy": 4.0,
+            "count": 345,
+            "probability": 0.16845703125
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1,
+              "x_C": 0
+            },
+            "energy": 5.0,
+            "count": 188,
+            "probability": 0.091796875
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0,
+              "x_C": 1
+            },
+            "energy": 7.0,
+            "count": 162,
+            "probability": 0.0791015625
+          },
+          {
+            "assignment": {
+              "x_A": 0,
+              "x_B": 1,
+              "x_C": 0
+            },
+            "energy": 11.0,
+            "count": 232,
+            "probability": 0.11328125
+          },
+          {
+            "assignment": {
+              "x_A": 0,
+              "x_B": 0,
+              "x_C": 1
+            },
+            "energy": 13.0,
+            "count": 276,
+            "probability": 0.134765625
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 0,
+              "x_C": 0
+            },
+            "energy": 14.0,
+            "count": 681,
+            "probability": 0.33251953125
+          },
+          {
+            "assignment": {
+              "x_A": 1,
+              "x_B": 1,
+              "x_C": 1
+            },
+            "energy": 18.0,
+            "count": 92,
+            "probability": 0.044921875
+          },
+          {
+            "assignment": {
+              "x_A": 0,
+              "x_B": 0,
+              "x_C": 0
+            },
+            "energy": 40.0,
+            "count": 72,
+            "probability": 0.03515625
+          }
+        ],
+        "ising": {
+          "offset": 14.0,
+          "linear_coefficients": [
+            3.0,
+            4.5,
+            3.5
+          ],
+          "couplings": [
+            {
+              "var_i": "x_A",
+              "var_j": "x_B",
+              "coefficient": 5.0
+            },
+            {
+              "var_i": "x_A",
+              "var_j": "x_C",
+              "coefficient": 5.0
+            },
+            {
+              "var_i": "x_B",
+              "var_j": "x_C",
+              "coefficient": 5.0
+            }
+          ]
+        }
+      },
+      "solution_verification": {
+        "verified": true,
+        "feasible": true,
+        "optimal": true,
+        "assignment": {
+          "x_A": 0,
+          "x_B": 1,
+          "x_C": 1
+        },
+        "original_objective": 4.0,
+        "qubo_energy": 4.0,
+        "constraint_check": {
+          "feasible": true,
+          "constraints": {
+            "select_two": {
+              "lhs": 2.0,
+              "rhs": 2.0,
+              "satisfied": true
+            }
+          }
+        },
+        "exact_reference": {
+          "feasible_solution_exists": true,
+          "optimal_assignment": {
+            "x_A": 0,
+            "x_B": 1,
+            "x_C": 1
+          },
+          "optimal_objective": 4.0,
+          "feasible_assignments_checked": 3
+        }
+      },
+      "passed": true,
+      "runtime_seconds": 0.1477
+    }
+  ],
+  "benchmark_results_summary": {
+    "passed": 3,
+    "total": 3
+  },
+  "corruption_results_summary": {
+    "passed": 3,
+    "total": 3
+  },
+  "qaoa_results_summary": {
+    "passed": 3,
+    "total": 3
+  }
+}
